@@ -1,0 +1,25 @@
+{
+	"name": "cutscene-flow",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/kit": "^2.22.0",
+		"@sveltejs/vite-plugin-svelte": "^6.0.0",
+		"svelte": "^5.0.0",
+		"vite": "^7.0.4"
+	},
+	"dependencies": {
+		"d3-selection": "^3.0.0",
+		"d3-zoom": "^3.0.0",
+		"elkjs": "^0.11.0",
+		"highlight.js": "^11.11.1"
+	}
+}

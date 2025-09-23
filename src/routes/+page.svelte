@@ -7,10 +7,15 @@
     import { get } from 'svelte/store';
 
     let currentTheme = get(theme);
-    function toggle() {
-        theme.update((t) => (t === 'light' ? 'dark' : 'light'));
+    // function toggle() {
+    //     theme.update((t) => (t === 'light' ? 'dark' : 'light'));
+    //     currentTheme = get(theme);
+    //     console.log('Theme toggled to:', currentTheme);
+    // }
+    function setTheme(themeName) {
+        theme.set(themeName);
         currentTheme = get(theme);
-        console.log('Theme toggled to:', currentTheme);
+        console.log('Theme set to:', currentTheme);
     }
 
     import EditBeat from '$lib/EditBeat.svelte';
@@ -389,7 +394,13 @@
             }} />
         </div>
 
-        <button on:click={toggle}>Enable {currentTheme === 'light' ? 'Dark' : 'Light'} Mode</button>
+        <!-- <button on:click={toggle}>Enable {currentTheme === 'light' ? 'Dark' : 'Light'} Mode</button> -->
+        <select bind:value={currentTheme} on:change={(e) => setTheme(e.target.value)}>
+            <option disabled value="">Select Theme</option>
+            <option value="light">Light Mode</option>
+            <option value="dark">Dark Mode</option>
+            <option value="high-contrast-dark">High Contrast Dark</option>
+        </select>
     </div>
     <div class="content">
         <div class="left">

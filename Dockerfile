@@ -8,7 +8,9 @@ RUN npm install
 
 COPY . ./
 
+ENV PORT=3012
+
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 3012
 CMD ["node", "build/index.js"]
